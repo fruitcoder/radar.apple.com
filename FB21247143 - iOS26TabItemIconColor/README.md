@@ -34,4 +34,4 @@ Text is red
 Workaround:
 Pipe the image through UIImage and tint it using `withTintColor(<color>, renderingMode: .alwaysOriginal)`
 
-https://openradar.appspot.com/radar?id=
+https://openradar.me/radar?id=EhAKBVJhZGFyEICAgKab5fYJ
