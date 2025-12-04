@@ -1,9 +1,8 @@
 import SwiftUI
 
 @main
-struct iOS26TabItemIconColorApp: App {
+struct iPadOS26TabBarCustomizationApp: App {
 	@State private var selection: Int = 0
-	@State private var shouldUseWorkaround: Bool = false
 
 	var body: some Scene {
 		WindowGroup {
@@ -32,22 +31,14 @@ struct iOS26TabItemIconColorApp: App {
 					Label {
 						Text("Title 2")
 					} icon: {
-						if
-							shouldUseWorkaround,
-							selection != 1,
-							let image = UIImage(systemName: "circle.fill")?.withTintColor(.red, renderingMode: .alwaysOriginal)
-						{
-							Image(uiImage: image)
-						} else {
-							Image(systemName: "circle.fill")
-						}
+						Image(systemName: "circle.fill")
 					}
 				}
 			}
 
 			.onAppear {
 				let tabBarAppeareance = UITabBarAppearance()
-				tabBarAppeareance.configureWithTransparentBackground()
+				tabBarAppeareance.configureWithDefaultBackground()
 
 				let itemAppearance = UITabBarItemAppearance()
 				itemAppearance.normal.iconColor = .red
@@ -73,4 +64,5 @@ struct iOS26TabItemIconColorApp: App {
 		.foregroundColor: UIColor.red,
 		.font: UIFont(name: "Georgia", size: 20)!
 	]
+
 }
